@@ -35,3 +35,30 @@ Além disso, você precisará entregar um relatório reportando a performance e 
 Data source: [Link](https://www.kaggle.com/ntnu-testimon/paysim1)
 
 # Planning
+
+## Sprint 01 - (13/10 - 19/10)
+Entregável: Notebook
+- Data Description
+- Planejamento e Substituição de NA
+- Lista de Hipóteses
+
+## Sprint 02 - (20/10 - 26/10)
+Entregável: Notebook
+- EDA (Análise Exploratoria de Dados)
+- Data Preparation
+
+## Sprint 03 - (27/10 - 02/11)
+Entregável: Notebook
+- Modelo Funcional
+- Métricas de Performance
+
+## Sprint 04 - (03/11 - 09/11)
+Entregável: Notebook
+- Modelo em Produção no Heroku
+- Requisição pelo Google Sheets
+- Medium Post sobre principal aprendizado durante projeto.
+
+# Referências
+
+# Author
+Bruno Vincius Nonato
