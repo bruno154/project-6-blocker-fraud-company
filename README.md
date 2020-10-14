@@ -8,9 +8,9 @@ E o modelo de negócio da empresa é do tipo Serviço com a monetização feita 
 
 Porém, a Blocker Fraud Company está em fase de expansão no Brasil e para adquirir clientes mais rapidamente, ela adotou uma estratégia muito agressiva. A estratégia funciona da seguinte forma:
 
-    A empresa vai receber 25% do valor de cada transação detectada verdadeiramente como fraude.
-    A empresa vai receber 5% do valor de cada transação detectada como fraude, porém a transação é verdadeiramente legítima.
-    A empresa vai devolver 100% do valor para o cliente, a cada transação detectada como legítima, porém a transação é verdadeiramente uma fraude.
+-    A empresa vai receber 25% do valor de cada transação detectada verdadeiramente como fraude.
+-    A empresa vai receber 5% do valor de cada transação detectada como fraude, porém a transação é verdadeiramente legítima.
+-    A empresa vai devolver 100% do valor para o cliente, a cada transação detectada como legítima, porém a transação é verdadeiramente uma fraude.
 
 Com essa estratégia agressiva a empresa assume os riscos em falhar na detecção de fraude e é remunerada na detecção assertiva das fraudes.
 
@@ -26,11 +26,11 @@ Ao final da sua consultoria, você precisa entregar ao CEO da Blocker Fraud Comp
 
 Além disso, você precisará entregar um relatório reportando a performance e os resultados do seu modelo em relação ao lucro e prejuízo que a empresa terá ao usar o modelo que você produziu. No seu relatório deve conter as respostas para as seguintes perguntas:
 
-    Qual a Precisão e Acurácia do modelo?
-    Qual a Confiabilidade do modelo em classificar as transações como legítimas ou fraudulentas?
-    Qual o Faturamento Esperado pela Empresa se classificarmos 100% das transações com o modelo?
-    Qual o Prejuízo Esperado pela Empresa em caso de falha do modelo?
-    Qual o Lucro Esperado pela Blocker Fraud Company ao utilizar o modelo?
+ -   Qual a Precisão e Acurácia do modelo?
+ -   Qual a Confiabilidade do modelo em classificar as transações como legítimas ou fraudulentas?
+ -   Qual o Faturamento Esperado pela Empresa se classificarmos 100% das transações com o modelo?
+ -   Qual o Prejuízo Esperado pela Empresa em caso de falha do modelo?
+ -   Qual o Lucro Esperado pela Blocker Fraud Company ao utilizar o modelo?
 
 Data source: [Link](https://www.kaggle.com/ntnu-testimon/paysim1)
 
