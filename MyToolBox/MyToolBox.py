@@ -1,6 +1,9 @@
 import glob
 import math
 import pandas as pd
+import numpy as np
+import dask.array as da
+import dask.dataframe as dd
 import seaborn as sns
 import matplotlib.pyplot as plt
 from time import strftime
@@ -21,6 +24,17 @@ class CollectData:
             test = pd.read_csv(self.path)
             Xtest = test.copy()
             return Xtest
+
+    def get_data_dask(path, target, kind='train'):
+        if kind == 'train':
+            train = dd.read_csv(path)
+            X = train.drop(target, axis=1)
+            y = train[target]
+        else:
+            test = dd.read_csv(path)
+            X = test.copy()
+
+        return train, X, y
 
 
 class DataDescription:
@@ -169,7 +183,7 @@ class EDA:
         ax.set_ylabel('Count', fontsize=14)
         ax=ax
 
-    def hipo_test(*samples):
+    def hipo_test(self, *samples):
 
         samples = samples
 
@@ -189,6 +203,33 @@ class EDA:
             print('Provável que não haja diferença')
 
         return stat, p
+
+    def Myheat_map(self, dataset, variaveis):
+
+        df_corr = self.dataframe[variaveis].corr()
+
+        fig, ax = plt.subplots(figsize=(16, 10))
+        # mask
+        mask = np.triu(np.ones_like(df_corr, dtype=np.bool))
+        # adjust mask and df
+        mask = mask[1:, :-1]
+        corr = df_corr.iloc[1:,:-1].copy()
+        # color map
+        cmap = sns.diverging_palette(0, 230, 90, 60, as_cmap=True)
+
+        # plot heatmap
+        sns.heatmap(corr, mask=mask, annot=True, fmt=".2f",
+                    linewidths=5, cmap=cmap, vmin=-1, vmax=1,
+                    cbar_kws={"shrink": .8}, square=True)
+        yticks = [i.upper() for i in corr.index]
+        xticks = [i.upper() for i in corr.columns]
+        plt.yticks(plt.yticks()[0], labels=yticks, rotation=0)
+        plt.xticks(plt.xticks()[0], labels=xticks)
+
+        # title
+        title = 'CORRELATION MATRIX\n'
+        plt.title(title, loc='left', fontsize=18)
+        plt.show()
 
 
 class DataPreparation:
@@ -217,6 +258,7 @@ class ModelEvaluation:
 
 
 class StatsCalculations:
+
 
     def binomial_prob(self, n, p, x):
         """
