@@ -135,9 +135,9 @@ class EDA:
         # set of initial plot posistion
         n = 1
 
-        plt.figure(figsize=(18, 10))
+        plt.figure(figsize=(24, 16))
         for column in self.dataframe[variables].columns:
-            plt.subplot(3, 3, n)
+            plt.subplot(5, 5, n)
             _ = sns.histplot(x=self.dataframe[column], bins=50)
             n += 1
 
