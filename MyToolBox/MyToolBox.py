@@ -125,11 +125,6 @@ class EDA:
     def multi_histograms(self, variables: list) -> None:
 
         """
-        Function to check for outliers visually through a boxplot
-
-        data: DataFrame
-
-        variable: list of numerical variables
         """
 
         # set of initial plot posistion
@@ -138,7 +133,7 @@ class EDA:
         plt.figure(figsize=(24, 16))
         for column in self.dataframe[variables].columns:
             plt.subplot(5, 5, n)
-            _ = sns.histplot(x=self.dataframe[column], bins=50)
+            _ = sns.distplot(x=self.dataframe[column], bins=50)
             n += 1
 
         plt.subplots_adjust(hspace=0.3)
